@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WordTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-04-29T20:36:50" hostname="epicodus-117.local" time="0.005">
+<testsuite name="WordTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-04-29T21:26:36" hostname="epicodus-117.local" time="0.001">
   <properties/>
-  <testcase name="find_returnsWordWithSameId_secondWord" classname="WordTest" time="0.001"/>
+  <testcase name="find_returnsWordWithSameId_secondWord" classname="WordTest" time="0.0"/>
   <testcase name="getDefinitions_initiallyReturnsEmptyList_ArrayList" classname="WordTest" time="0.0"/>
   <testcase name="Word_instantiatesCorrectly_true" classname="WordTest" time="0.0"/>
   <testcase name="retrieveAll_returnAllInstancesOfWord_true" classname="WordTest" time="0.0"/>
-  <testcase name="getWord_wordInstantiatesWithWord_String" classname="WordTest" time="0.001"/>
+  <testcase name="getWord_wordInstantiatesWithWord_String" classname="WordTest" time="0.0"/>
   <testcase name="clearWord_emptiesAllWordsFromList_0" classname="WordTest" time="0.0"/>
   <testcase name="getId_wordsInstantiateWithAnID_1" classname="WordTest" time="0.001"/>
   <testcase name="find_returnsNullWhenNoWordFound_null" classname="WordTest" time="0.0"/>
