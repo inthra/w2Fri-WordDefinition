@@ -1,6 +1,6 @@
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
-import org.junit.Rule;
+// import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -34,5 +34,24 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("Your word has been saved.");
   }
+
+  @Test
+  public void wordIsDisplayedTest() {
+    goTo("http://localhost:4567/words/newWord");
+    fill("#inputWord").with("discovery");
+    submit(".btn");
+    click("a", withText("View All Words"));
+    // assertThat(pageSource()).contains("discovery");
+  }
+
+  // @Test
+  // public void wordShowPageDisplaysTheWord() {
+  //   goTo("http://localhost:4567/words/newWord");
+  //   fill("#inputWord").with("discovery");
+  //   submit(".btn");
+  //   click("a", withText("View All Words"));
+  //   click("a", withText("discovery"));
+  //   assertThat(pageSource()).contains("discovery");
+  // }
 
 }

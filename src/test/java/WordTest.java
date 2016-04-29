@@ -22,18 +22,18 @@ public class WordTest {
   }
 
   @Test
-  public void retrieveAll_returnAllInstancesOfWord_true() {
+  public void retrieveAllWord_returnAllInstancesOfWord_true() {
     Word firstWord = new Word("happy");
     Word secondWord = new Word("tea");
-    assertTrue(Word.retrieveAll().contains(firstWord));
-    assertTrue(Word.retrieveAll().contains(secondWord));
+    assertTrue(Word.retrieveAllWord().contains(firstWord));
+    assertTrue(Word.retrieveAllWord().contains(secondWord));
   }
 
   @Test
   public void clearWord_emptiesAllWordsFromList_0() {
     Word testWord = new Word("happy");
     Word.clearWord();
-    assertEquals(Word.retrieveAll().size(), 0);
+    assertEquals(Word.retrieveAllWord().size(), 0);
   }
 
   @Test

@@ -17,7 +17,7 @@ public class Word {
     return mWord;
   }
 
-  public static ArrayList<Word> retrieveAll() {
+  public static ArrayList<Word> retrieveAllWord() {
     return allWords;
   }
 
