@@ -6,6 +6,7 @@ public class WordTest {
   @After
   public void tearDown() {
     Word.clearWord();
+    Definition.clearDefinition();
   }
 
   @Test
@@ -51,5 +52,19 @@ public class WordTest {
   @Test
   public void find_returnsNullWhenNoWordFound_null() {
     assertTrue(Word.find(99999) == null);
+  }
+
+  @Test
+  public void getDefinitions_initiallyReturnsEmptyList_ArrayList() {
+    Word testWord = new Word("discovery");
+    assertEquals(0, testWord.getDefinitions().size());
+  }
+
+  @Test
+  public void addDefinition_addsDefinitionToWord_true() {
+    Word testWord = new Word("discovery");
+    Definition testDefiniton = new Definition("the act or an instance of discovering.");
+    testWord.addDefiniton(testDefiniton);
+    assertTrue(testWord.getDefinitions().contains(testDefiniton));
   }
 }
