@@ -3,6 +3,11 @@ import static org.junit.Assert.*;
 
 public class DefinitionTest {
 
+  @After
+  public void tearDown() {
+    Definition.clearDefinition();
+  }
+
   @Test
   public void Definition_instantiatesCorrectly_true() {
     Definition myMeaning = new Definition("delighted");  // Definition of "happy"
@@ -48,5 +53,5 @@ public class DefinitionTest {
   public void find_returnsNullWhenNoMeaningFound_null() {
     assertTrue(Definition.find(99) == null);
   }
-  
+
 }
