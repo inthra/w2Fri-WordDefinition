@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DefinitionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-04-29T22:49:28" hostname="epicodus-117.local" time="0.002">
+<testsuite name="DefinitionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-04-29T23:50:00" hostname="epicodus-117.local" time="0.003">
   <properties/>
-  <testcase name="find_returnsDefinitionWithSameId_secondMeaning" classname="DefinitionTest" time="0.0"/>
+  <testcase name="find_returnsDefinitionWithSameId_secondMeaning" classname="DefinitionTest" time="0.001"/>
   <testcase name="getId_meaningsInstantiateWithAnID_1" classname="DefinitionTest" time="0.0"/>
   <testcase name="Definition_instantiatesWithMeaning_String" classname="DefinitionTest" time="0.0"/>
   <testcase name="clearDefiniton_emptiesAllDefinitionsFromArrayList_0" classname="DefinitionTest" time="0.0"/>

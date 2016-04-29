@@ -1,6 +1,6 @@
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
-// import org.junit.Rule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -41,17 +41,28 @@ public class AppTest extends FluentTest {
     fill("#inputWord").with("discovery");
     submit(".btn");
     click("a", withText("View All Words"));
-    // assertThat(pageSource()).contains("discovery");
+    assertThat(pageSource()).contains("discovery");
+  }
+
+  @Test
+  public void wordShowPageDisplaysTheWord() {
+    goTo("http://localhost:4567/words/newWord");
+    fill("#inputWord").with("happy");
+    submit(".btn");
+    click("a", withText("View All Words"));
+    click("a", withText("happy"));
+    assertThat(pageSource()).contains("happy");
   }
 
   // @Test
-  // public void wordShowPageDisplaysTheWord() {
+  // public void wordDefinitionFormIsDisplayed() {
   //   goTo("http://localhost:4567/words/newWord");
-  //   fill("#inputWord").with("discovery");
+  //   fill("#inputWord").with("happy");
   //   submit(".btn");
   //   click("a", withText("View All Words"));
-  //   click("a", withText("discovery"));
-  //   assertThat(pageSource()).contains("discovery");
+  //   click("a", withText("happy"));
+  //   click("a", withText("Add a new definition"));
+  //   assertThat(pageSource()).contains("Add a definition to happy");
   // }
 
 }
