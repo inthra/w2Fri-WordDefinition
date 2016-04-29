@@ -5,7 +5,15 @@ public class DefinitionTest {
 
   @Test
   public void Definition_instantiatesCorrectly_true() {
-    Definition myDefinition = new Definition("a wild or natural musical tone, as that of a forest bird.");
+    Definition myDefinition = new Definition("delighted");  // Definition of "happy"
     assertEquals(true, myDefinition instanceof Definition);
   }
+
+  @Test
+  public void Definition_instantiatesWithMeaning_String() {
+    Definition myDefinition = new Definition("delighted");  // Definition of "happy"
+    assertEquals("delighted", myDefinition.getMeaning());
+  }
+
+
 }
