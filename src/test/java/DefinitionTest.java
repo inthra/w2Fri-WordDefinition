@@ -15,5 +15,19 @@ public class DefinitionTest {
     assertEquals("delighted", myDefinition.getMeaning());
   }
 
+  @Test
+  public void retrieveAll_returnAllInstancesOfDefinition_true() {
+    Definition firstMeaning = new Definition("delighted");
+    Definition secondMeaning = new Definition("pleased");
+    assertTrue(Definition.retrieveAll().contains(firstMeaning));
+    assertTrue(Definition.retrieveAll().contains(secondMeaning));
+  }
+
+  @Test
+  public void clearDefiniton_emptiesAllDefinitionsFromArrayList_0() {
+    Definition myDefinition = new Definition("delighted");
+    Definition.clearDefinition();
+    assertEquals(Definition.retrieveAll().size(), 0);
+  }
 
 }
