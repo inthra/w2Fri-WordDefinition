@@ -5,14 +5,14 @@ public class DefinitionTest {
 
   @Test
   public void Definition_instantiatesCorrectly_true() {
-    Definition myDefinition = new Definition("delighted");  // Definition of "happy"
-    assertEquals(true, myDefinition instanceof Definition);
+    Definition myMeaning = new Definition("delighted");  // Definition of "happy"
+    assertEquals(true, myMeaning instanceof Definition);
   }
 
   @Test
   public void Definition_instantiatesWithMeaning_String() {
-    Definition myDefinition = new Definition("delighted");  // Definition of "happy"
-    assertEquals("delighted", myDefinition.getMeaning());
+    Definition myMeaning = new Definition("delighted");  // Definition of "happy"
+    assertEquals("delighted", myMeaning.getMeaning());
   }
 
   @Test
@@ -25,9 +25,28 @@ public class DefinitionTest {
 
   @Test
   public void clearDefiniton_emptiesAllDefinitionsFromArrayList_0() {
-    Definition myDefinition = new Definition("delighted");
+    Definition myMeaning = new Definition("delighted");
     Definition.clearDefinition();
     assertEquals(Definition.retrieveAll().size(), 0);
   }
 
+  @Test
+  public void getId_meaningsInstantiateWithAnID_1() {
+    Definition.clearDefinition();
+    Definition myMeaning = new Definition("delighted");
+    assertEquals(1, myMeaning.getId());
+  }
+
+  @Test
+  public void find_returnsDefinitionWithSameId_secondMeaning() {
+    Definition firstMeaning = new Definition("delighted");
+    Definition secondMeaning = new Definition("pleased");
+    assertEquals(Definition.find(secondMeaning.getId()), secondMeaning);
+  }
+
+  @Test
+  public void find_returnsNullWhenNoMeaningFound_null() {
+    assertTrue(Definition.find(99) == null);
+  }
+  
 }
