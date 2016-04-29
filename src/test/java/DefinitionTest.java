@@ -37,7 +37,6 @@ public class DefinitionTest {
 
   @Test
   public void getId_meaningsInstantiateWithAnID_1() {
-    Definition.clearDefinition();
     Definition myMeaning = new Definition("delighted");
     assertEquals(1, myMeaning.getId());
   }
@@ -53,5 +52,4 @@ public class DefinitionTest {
   public void find_returnsNullWhenNoMeaningFound_null() {
     assertTrue(Definition.find(99) == null);
   }
-
 }
