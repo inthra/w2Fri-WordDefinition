@@ -1,4 +1,4 @@
-# _BDD Independent Project: Dictionary_
+# _Object in Object Independent Project: Dictionary_
 
 #### _A program that lets users create a dictionary, 04/29/2016_
 
