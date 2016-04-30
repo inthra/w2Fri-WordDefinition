@@ -65,18 +65,18 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void descriptionsIsAddedAndDisplayed() {
+  public void definitionsIsAddedAndDisplayed() {
     goTo("http://localhost:4567/words/newWord");
-    fill("#inputWord").with("dog");
+    fill("#inputWord").with("bird");
     submit(".btn");
     click("a", withText("View All Words"));
-    click("a", withText("dog"));
-    click("a", withText("Add a new description"));
-    fill("#inputMeaning").with("bred in many varieties.");
+    click("a", withText("bird"));
+    click("a", withText("Add a new definition"));
+    fill("#inputMeaning").with("a fowl.");
     submit(".btn");
     click("a", withText("View All Words"));
-    click("a", withText("origin"));
-    assertThat(pageSource()).contains("bred in many varieties.");
+    click("a", withText("bird"));
+    assertThat(pageSource()).contains("a fowl.");
   }
 
 }

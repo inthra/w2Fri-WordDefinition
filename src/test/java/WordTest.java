@@ -64,7 +64,7 @@ public class WordTest {
   public void addDefinition_addsDefinitionToWord_true() {
     Word testWord = new Word("discovery");
     Definition testDefiniton = new Definition("the act or an instance of discovering.");
-    testWord.addDefiniton(testDefiniton);
+    testWord.addDefinition(testDefiniton);
     assertTrue(testWord.getDefinitions().contains(testDefiniton));
   }
 }

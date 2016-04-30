@@ -1,4 +1,12 @@
 <h1>$word.getWord()</h1>
 
+<h4>Definition:</h4>
+
+<ul>
+  #foreach($eachDefinition in $word.getDefinitions())
+   <li>$eachDefinition.getMeaning()</li>
+  #end
+</ul>
+
 <a href="/words/$word.getId()/definitions/new">Add a new definition</a>
 <a href="/viewAll">View All Words</a>

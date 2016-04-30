@@ -41,7 +41,7 @@ public class Word {
     return mDefinitions;
   }
 
-  public void addDefiniton(Definition meaning) {
+  public void addDefinition(Definition meaning) {
     mDefinitions.add(meaning);
   }
 }
