@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.fluentlenium.core.filter.FilterConstructor.*;
 import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.*;
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
@@ -16,6 +17,11 @@ public class AppTest extends FluentTest {
 
   @ClassRule
   public static ServerRule server = new ServerRule();
+
+  @After
+  public void tearDown() {
+    Definition.clearDefinition();
+  }
 
   @Test
   public void rootTest() {
@@ -42,7 +48,7 @@ public class AppTest extends FluentTest {
     click("a", withText("View All Words"));
     assertThat(pageSource()).contains("discovery");
   }
-// something wrong with the gradle test from this point. It can be run Gradle Run, but cannot pass the test.
+
   @Test
   public void wordShowPageDisplaysTheWord() {
     goTo("http://localhost:4567/words/newWord");
@@ -56,12 +62,12 @@ public class AppTest extends FluentTest {
   @Test
   public void wordDefinitionFormIsDisplayed() {
     goTo("http://localhost:4567/words/newWord");
-    fill("#inputWord").with("cat");
+    fill("#inputWord").with("animal");
     submit(".btn");
     click("a", withText("View All Words"));
-    click("a", withText("cat"));
+    click("a", withText("animal"));
     click("a", withText("Add a new definition"));
-    assertThat(pageSource()).contains("Add a definition to cat");
+    assertThat(pageSource()).contains("Add a definition to ---&gt; animal"); // "---&gt;" in this line of test is "--->" when display on the webpage.
   }
 
   @Test
